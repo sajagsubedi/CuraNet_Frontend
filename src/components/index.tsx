@@ -1,6 +1,6 @@
 import Header from "./Header"
 import Main from "./Main"
-import Dashboard from "./Dashboard"
 import Footer from "./Footer"
+import Login from "./Login"
 
-export {Header,Main,Dashboard,Footer}
+export {Header,Main,Footer,Login}

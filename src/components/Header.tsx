@@ -18,8 +18,8 @@ const NavLinks = ({ closeDropDown }) => {
       href: "/services",
     },
     {
-      text: "Dashboard",
-      href: "/dashboard",
+      text: "Our Teams",
+      href: "/teams",
     },
     {
       text: "Contact",
@@ -64,75 +64,6 @@ function Header() {
           <img src={logo} className="h-10 mr-3" alt="logo" />
         </Link>
         <div className="flex items-center md:order-2">
-          {user ? (
-            <div className=" relative">
-              <button
-                type="button"
-                className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 "
-                onClick={() => setUserDropDown(!userDropDown)}
-              >
-                <img
-                  className="w-8 h-8 rounded-full"
-                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt="user photo"
-                />
-              </button>
-              {/* Dropdown menu */}
-              <div
-                className={`z-50  my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow   absolute right-0 top-5 max-w-[170px] overflow-hidden
-              transition-all duration-300 ease-in-out ${
-                !userDropDown ? "h-0" : "h-56"
-              }`}
-              >
-                <div className="px-4 py-3">
-                  <span className="block text-sm text-gray-900 ">
-                    Sajag Subedi
-                  </span>
-                  <span className="block text-sm text-gray-500 truncate ">
-                    sajagsubedi03@gmail.com
-                  </span>
-                </div>
-                <ul className="py-2">
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Patient Pannel
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Billing & Payments
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Settings
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Sign out
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          ) : (
-            <a className="rounded-md  py-1 px-2 bg-blue-600 text-white ">
-              Login
-            </a>
-          )}
           <button
             type="button"
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden outline-none "
