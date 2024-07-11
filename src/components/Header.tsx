@@ -18,15 +18,22 @@ const NavLinks = ({ closeDropDown }) => {
       href: "/services",
     },
     {
-      text: "Our Teams",
-      href: "/teams",
+      text: "Our Team",
+      href: "/our-team",
     },
     {
       text: "Contact",
       href: "/contact",
     },
+    {
+      text: "Login",
+      href: "/login",
+    },
+    {
+      text: "Signup",
+      href: "/signup",
+    },
   ];
-  console.log(location.pathname);
   return (
     <>
       {navlinks.map((item, i) => {
@@ -36,8 +43,8 @@ const NavLinks = ({ closeDropDown }) => {
               to={item.href}
               className={`block py-2 pl-3 pr-4  rounded md:hover:bg-transparent md:hover:text-blue-700 md:bg-transparent ${
                 location.pathname !== item.href
-                  ? "text-gray-900 hover:bg-blue-100 "
-                  : "text-white bg-blue-600 hover:bg-blue-700 md:text-gray-900"
+                  ? "text-gray-900 hover:bg-blue-200"
+                  : "text-white bg-blue-600 hover:bg-blue-700 md:text-blue-600"
               } md:p-0`}
             >
               {item.text}
@@ -50,12 +57,9 @@ const NavLinks = ({ closeDropDown }) => {
 };
 
 function Header() {
-  const [userDropDown, setUserDropDown] = useState(false);
   const [navMenu, setNavMenu] = useState(false);
-  const [user, setUser] = useState(true);
   const closeDropDown = () => {
     setNavMenu(false);
-    setUserDropDown(false);
   };
   return (
     <nav className="bg-white border-gray-200 shadow-sm sticky top-0 z-50">
@@ -89,7 +93,7 @@ function Header() {
         <div className="items-center justify-between flex w-full md:flex md:w-auto md:order-1 relative  flex-col z-10">
           <div
             className={`mt-4  absolute w-full md:static  md:h-auto overflow-hidden box-border transition-all duration-300  shadow-2xl rounded-lg md:shadow-none md:mt-0 ${
-              navMenu ? "h-60" : "h-0"
+              navMenu ? "h-80" : "h-0"
             }`}
           >
             <ul

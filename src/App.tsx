@@ -1,16 +1,15 @@
 import "./App.css";
-import { Header, Main, Footer,Login } from "./components/index";
+import { HomePage, LoginPage, UserDashboard} from "./pages/index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 export default function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
         <Routes>
-          <Route exact path="/" element={<Main />} />
-          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/login" element={<LoginPage />} />
+          <Route exact path="/dashboard" element={<UserDashboard />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </>
   );

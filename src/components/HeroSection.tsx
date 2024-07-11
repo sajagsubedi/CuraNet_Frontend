@@ -1,6 +1,6 @@
 import img from "../assets/banner.png";
 
-export default function Main() {
+export default function HeroSection() {
   return (
     <div className="relative">
       <div
