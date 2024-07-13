@@ -22,7 +22,7 @@ export default function Page() {
         <section className="text-gray-600 body-font px-6 pt-20 flex justify-center">
                 <div className="w-full sm:w-[325px] flex flex-col">
                     <h2 className=" text-2xl md:text-3xl mb-4 font-bold title-font text-left ">
-                    Hey,<br/>
+                    Hey&#44;<br/>
                         <span className="text-blue-600">Welcome</span> back. 
                     </h2>
                     <div className="relative mb-4">
@@ -67,7 +67,7 @@ export default function Page() {
                     </button>
                   <div className="mt-5 flex items-center gap-2 justify-center text-gray-500"><hr className="w-[175px] h-[2px] bg-gray-200" />or<hr className="w-[175px]  h-[2px] bg-gray-200" /></div>
                    <p className="flex gap-2 justify-end 
-                    mt-6">  Don't have an account? 
+                    mt-6">  Don&apos;t have an account? 
                     <Link className="text-blue-500 underline" href="/signup">Signup</Link>
                     </p>
                 </div>
