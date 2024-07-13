@@ -1,7 +1,8 @@
-import {Link} from "react-router-dom"
+"use client"
+import Link from "next/link"
 import {useState} from "react"
 
-export default function Login() {
+export default function Page() {
   const [phone,setPhone]=useState("")
   const [password,setPassword]=useState("")
   const handlePhoneChange=(e:React.ChangeEvent<HTMLInputElement>):void=>{
@@ -26,7 +27,7 @@ export default function Login() {
                     </h2>
                     <div className="relative mb-4">
                         <label
-                            for="email"
+                        htmlFor="email"
                             className="leading-7 text-sm text-gray-600"
                         >
                             Phone
@@ -43,7 +44,7 @@ export default function Login() {
                     </div>
                     <div className="relative mb-4">
                         <label
-                            for="message"
+                            htmlFor="message"
                             className="leading-7 text-sm text-gray-600"
                         >
                             Password
@@ -59,15 +60,15 @@ export default function Login() {
                         />
                     </div>
                       <div className="mb-2 text-right">
-                    <Link className="text-blue-500 underline" to="/forgot-password"> Forgot password?</Link>
+                    <Link className="text-blue-500 underline" href="/signin/forgot-password"> Forgot password?</Link>
                     </div>
                     <button className="text-white bg-blue-600 border-0 py-2 px-6 focus:outline-none hover:bg-blue-700 rounded text-lg">
-                        Login
+                        Signin
                     </button>
                   <div className="mt-5 flex items-center gap-2 justify-center text-gray-500"><hr className="w-[175px] h-[2px] bg-gray-200" />or<hr className="w-[175px]  h-[2px] bg-gray-200" /></div>
                    <p className="flex gap-2 justify-end 
                     mt-6">  Don't have an account? 
-                    <Link className="text-blue-500 underline" to="/signup">Signup</Link>
+                    <Link className="text-blue-500 underline" href="/signup">Signup</Link>
                     </p>
                 </div>
         </section>

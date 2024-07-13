@@ -1,9 +1,10 @@
+"use client";
 import React, { useState } from "react";
-import { useLocation, Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import { usePathname } from 'next/navigation'
+import logo from "@/assets/logo.png";
+import Link from "next/link"
 
-const NavLinks = ({ closeDropDown }) => {
-  const location = useLocation();
+const NavLinks = ({ closeDropDown }:{closeDropDown:()=>void }) => {
   const navlinks = [
     {
       text: "Home",
@@ -26,23 +27,24 @@ const NavLinks = ({ closeDropDown }) => {
       href: "/contact",
     },
     {
-      text: "Login",
-      href: "/login",
+      text: "Signin",
+      href: "/signin",
     },
     {
       text: "Signup",
       href: "/signup",
     },
   ];
+  const pathname = usePathname()
   return (
     <>
       {navlinks.map((item, i) => {
         return (
           <li key={i} onClick={closeDropDown}>
             <Link
-              to={item.href}
+              href={item.href}
               className={`block py-2 pl-3 pr-4  rounded md:hover:bg-transparent md:hover:text-blue-700 md:bg-transparent ${
-                location.pathname !== item.href
+                pathname !== item.href
                   ? "text-gray-900 hover:bg-blue-200"
                   : "text-white bg-blue-600 hover:bg-blue-700 md:text-blue-600"
               } md:p-0`}
@@ -64,8 +66,8 @@ function Header() {
   return (
     <nav className="bg-white border-gray-200 shadow-sm sticky top-0 z-50">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link to="/" className="flex items-center">
-          <img src={logo} className="h-10 mr-3" alt="logo" />
+        <Link href="/" className="flex items-center">
+          <img src={logo.src} className="h-10 mr-3" alt="logo" />
         </Link>
         <div className="flex items-center md:order-2">
           <button
